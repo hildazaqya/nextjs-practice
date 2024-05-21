@@ -1,12 +1,8 @@
 import Navbar from "@/components/ui/navbar";
 import ItemCard from "@/components/ui/item-card";
 import Counter from "@/components/counter";
-import { useState } from "react"
 
-export default function Home() {
-
-  const [count, setCount] = useState(0)
-  
+export default function Home() {  
   let linkImage = "https://cdn2.thecatapi.com/images"
   return (
     <main className="flex min-h-screen flex-col items-center bg-[#1b1a1a]">
