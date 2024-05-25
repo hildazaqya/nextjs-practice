@@ -5,14 +5,21 @@ import { useState } from "react"
 function Counter() {
     const [count, setCount] = useState(0)
 
-    function handleClick() {
-        setCount(100)
+    function decrement() {
+        if (count > 0) {
+        setCount(count - 1)
+        }
     }
+
+    function increment() {
+        setCount(count + 1)
+    }
+
     return (
         <div className="flex gap-2 bg-white mt-5 p-5">
-            <button>-</button>
-            <span>{count}</span>
-            <button onClick={handleClick}>+</button>
+            <button onClick={decrement}>-</button>
+            <span className="text-2xl">{count}</span>
+            <button onClick={increment}>+</button>
         </div>
     )
 }

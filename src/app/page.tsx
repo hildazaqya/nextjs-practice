@@ -1,6 +1,7 @@
 import Navbar from "@/components/ui/navbar";
 import ItemCard from "@/components/ui/item-card";
 import Counter from "@/components/counter";
+import FormLogin from "@/components/ui/form-login2";
 
 export default function Home() {  
   let linkImage = "https://cdn2.thecatapi.com/images"
@@ -17,6 +18,7 @@ export default function Home() {
       </div>
       </div>
       <Counter />
+      <FormLogin />
     </main>
 );
 }
