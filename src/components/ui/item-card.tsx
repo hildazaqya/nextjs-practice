@@ -1,17 +1,33 @@
-import Image from "next/image"
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 
 interface Cat {
-    name: string,
-    imgCat: string,
+  id: string
+  name: string;
+  imgCat: string;
 }
-function ItemCard({name,imgCat}: Cat) {
-    return (
-        <div className="bg-white rounded-lg shadow-xl p-4 flex flex-col items-center justify-center min-h-[180px]">
-            <Image alt={name} width={100} height={100} src={imgCat} className="rounded-md shadow-md h-[100px] w-[100px] object-cover"/>
-            <h2 className="text-lg font-bold mt-2 text-[#4FC0D0]">{name}</h2>
-            <p className="text-xs">Lorem Ipsum</p>
-        </div>
-    )
+
+function ItemCard({ id, name, imgCat }: Cat) {
+  function handleClick() {
+    console.log(name);
+  }
+
+  return (
+    <div className="w-52 border-2 border-gray-900 bg-white p-5 rounded-md" onClick={handleClick}>
+      <Link href={`/cat/${id}`}>
+        <Image
+          src={imgCat}
+          alt={name}
+          width={800}
+          height={100}
+          className="h-40 object-cover"
+        />
+        <h2 className="text-center text-xl font-bold">{name}</h2>
+      </Link>
+    </div>
+  );
 }
 
 export default ItemCard;
